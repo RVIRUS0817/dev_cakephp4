@@ -42,7 +42,7 @@ docker exec -it app-cakephp bash
 
 composer install
 bin/cake migrations migrate
-upervisorctl restart app
+supervisorctl restart app
 ``` 
 
 - Access
