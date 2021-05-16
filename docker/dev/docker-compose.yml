@@ -1,8 +1,9 @@
 version: '2'
 services:
   app:
-    container_name: app-cakephp
+    container_name: cakephp-app
     build: ./app/
+    image: cakephp-app
     ports:
       - '80:80'
     volumes:
@@ -11,8 +12,9 @@ services:
     depends_on:
       - db
   db:
-    container_name: mysql-57
+    container_name: cakephp-db
     build: ./mysql/
+    image: cakephp-db
     ports:
       - '3309:3306'
     environment:
