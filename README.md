@@ -9,6 +9,7 @@
 	- cakephp 4.2.1
   - mysql-57
     - mysql:5.7
+  - redis
 
 
 - git clone or fork
@@ -38,7 +39,7 @@ docker-compose up -d
 - app deploy
 
 ```
-docker exec -it app-cakephp bash
+docker exec -it cakephp-app bash
 
 composer install
 bin/cake migrations migrate
@@ -56,8 +57,14 @@ http://dev.adachin.com/
 - DB login
 
 ```
-docker exec -it app-cakephp bash
+docker exec -it cakephp-app bash
 mysql -u root -h db -p
+```
+- redis login
+
+```
+docker exec -it cakephp-app bash
+redis-cli -h redis
 ```
 
 ## How to cakephp4 download

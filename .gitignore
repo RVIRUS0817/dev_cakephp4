@@ -41,3 +41,5 @@ nbproject/*
 # Sass preprocessor
 .sass-cache/
 /docker/dev/mysql/db_data
+/docker/dev/redis/db_data
+
