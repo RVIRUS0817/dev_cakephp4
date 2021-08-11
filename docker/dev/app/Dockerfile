@@ -20,14 +20,14 @@ RUN apk update && \
     g++ \
     gcc \
     git \
-	icu-dev \
+    icu-dev \
     libjpeg-turbo-dev \
     libpng-dev \
     libxml2-dev \
     libxslt-dev \
     make \
     mysql-dev \
-	mysql-client \
+    mysql-client \
     nginx \
     openssh \
     openssl \
