@@ -29,10 +29,8 @@ RUN apk update && \
     mysql-dev \
     mysql-client \
     nginx \
-    openssh \
     openssl \
     py3-pip \
-    sudo \
     supervisor \
     redis \
     tzdata \
