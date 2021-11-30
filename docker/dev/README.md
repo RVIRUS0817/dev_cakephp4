@@ -4,10 +4,10 @@
 
 
 - docker images
-  - app-cakephp
+  - cakephp-app
     - php:7.4-fpm-alpine (nginx,php-fpm,supervisor)
 	- cakephp 4.2.1
-  - mysql-57
+  - cakephp-db
     - mysql:8.0.27
   - redis
 
