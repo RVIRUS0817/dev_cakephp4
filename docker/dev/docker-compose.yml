@@ -16,6 +16,7 @@ services:
     container_name: cakephp-db
     build: ./mysql/
     image: cakephp-db
+    command: --default-authentication-plugin=mysql_native_password
     ports:
       - '3306:3306'
     environment:
