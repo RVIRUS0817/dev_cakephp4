@@ -9,7 +9,7 @@
 	- cakephp 4.2.1
   - cakephp-db
     - mysql:8.0.27
-  - redis
+  - cakephp-redis
 
 
 - git clone or fork
