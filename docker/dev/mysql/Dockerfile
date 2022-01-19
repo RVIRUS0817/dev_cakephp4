@@ -1,9 +1,10 @@
-FROM mysql:8.0.27
+FROM --platform=linux/x86_64 mysql:8.0.27
 
 ENV TZ Asia/Tokyo
 ENV LC_ALL ja_JP.UTF-8
 ENV MYSQL_ALLOW_EMPTY_PASSWORD yes
 
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 467B942D3A79BD29
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends\
     locales \
