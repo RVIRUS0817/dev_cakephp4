@@ -1,0 +1,47 @@
+version: '2'
+
+volumes:
+  php-fpm-sock:
+
+services:
+  nginx:
+    container_name: cakephp-nginx
+    build: ./nginx/
+    image: cakephp-nginx
+    ports:
+      - '80:80'
+    volumes:
+      - ~/git/github/dev_cakephp4:/var/www/app:delegated
+      - php-fpm-sock:/var/run/php-fpm
+    tty: true
+    depends_on:
+      - app
+  app:
+    container_name: cakephp-app
+    build: ./app/
+    image: cakephp-app
+    volumes:
+      - ~/git/github/dev_cakephp4:/var/www/app:delegated
+      - php-fpm-sock:/var/run/php-fpm
+    tty: true
+    depends_on:
+      - db
+      - redis
+  db:
+    container_name: cakephp-db
+    build: ./mysql/
+    image: cakephp-db
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_DATABASE: app
+    volumes:
+      - ./mysql/db_data:/var/lib/mysql
+  redis:
+    container_name: cakephp-redis
+    image: "redis:latest"
+    ports:
+      - '6379:6379'
+    volumes:
+      - ./redis/db_data:/data
