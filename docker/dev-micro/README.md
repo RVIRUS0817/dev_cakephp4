@@ -7,7 +7,7 @@
   - cakephp-nginx
     - nginx 1.25.2
   - cakephp-app
-    - php:7.4-fpm-alpine (nginx,php-fpm,supervisor)
+    - php:7.4-fpm-alpine (php-fpm)
     - cakephp 4.2.1
   - cakephp-db
     - mysql:8.0.27
